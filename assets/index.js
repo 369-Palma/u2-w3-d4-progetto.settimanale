@@ -1,6 +1,6 @@
 let firstRow = document.getElementById("primaSezione");
 let secondRow = document.getElementById("secondaSezione");
-
+let thirdRow = document.getElementById("terzaSezione");
 const fetchGenerale = async function (sito) {
   try {
     let res = await fetch(sito);
@@ -9,7 +9,6 @@ const fetchGenerale = async function (sito) {
       let data = await res.json();
       console.log(data);
       let arrayData = data.data;
-      console.log(typeof arrayData);
 
       for (let i = 0; i < 4; i++) {
         firstRow.innerHTML =
@@ -21,12 +20,10 @@ const fetchGenerale = async function (sito) {
       </div>
     </div>`;
       }
-      /* fetchGenerale(
-        "https://striveschool-api.herokuapp.com/api/deezer/search?q=wiskeyinthejar"
-      ); */
+
       secondRow.innerHTML =
         secondRow.innerHTML +
-        `<div class="card mb-3" style="max-width: 540px;">
+        `<div class="card mb-3" ">
 <div class="row g-0">
   <div class="col-md-4">
     <img src="${arrayData[8].album.cover}" class=" w-100 img-fluid rounded-start text-center " alt="...">
@@ -40,6 +37,30 @@ const fetchGenerale = async function (sito) {
   </div>
 </div>
 </div>`;
+
+      thirdRow.innerHTML =
+        thirdRow.innerHTML +
+        `<div id="carouselExampleAutoplaying" class="carousel slide mx-auto" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="${arrayData[6].album.cover}" class="  d-block col-4" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="${arrayData[10].album.cover}" class="d-block col-4" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="${arrayData[19].album.cover}" class="d-block col-4" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>`;
     } else {
       console.log("ops, c'è stato un errore");
     }
@@ -52,26 +73,23 @@ window.onload = fetchGenerale(
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
 );
 
-{
-  /* <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> */
-}
+//TEST
+
+/* const fetchBasic = async function (sito) {
+  try {
+    let res = await fetch(sito);
+     console.log(res); 
+    if (res.ok) {
+      let data = await res.json();
+      console.log(data); 
+      let arrayData = data.data;
+      console.log(arrayData);
+      return arrayData;
+
+    } else {
+      console.log("ops, c'è stato un errore");
+    }
+  } catch (error) {
+    console.log("C'è stato un errore:", error);
+  }
+}; */
