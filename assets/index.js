@@ -42,7 +42,7 @@ const fetchGenerale = async function (sito) {
         thirdRow.innerHTML +
         `<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active d-flex justify-content-center">
             <img src="${arrayData[6].album.cover}" class="  d-block col-4" alt="...">
           </div>
           <div class="carousel-item">
