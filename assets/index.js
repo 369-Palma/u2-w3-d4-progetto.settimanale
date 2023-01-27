@@ -1,5 +1,5 @@
 let firstRow = document.getElementById("primaSezione");
-
+let secondRow = document.getElementById("secondaSezione");
 const fetchGenerale = async function (sito) {
   try {
     let res = await fetch(sito);
@@ -16,11 +16,29 @@ const fetchGenerale = async function (sito) {
           `<div class="card d-flex mx-auto mb-2 col-6 col-lg-3 " >
       <img src="${arrayData[i].album.cover}" class="card-img-top" alt="${arrayData[i].title}">
       <div class="card-body">
-        <p class="card-text">${arrayData[i].title}</p>
-        
+        <p class="card-text text-center">${arrayData[i].title}</p>
       </div>
     </div>`;
       }
+      /* fetchGenerale(
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=wiskeyinthejar"
+      ); */
+      secondRow.innerHTML =
+        secondRow.innerHTML +
+        `<div class="card mb-3" style="max-width: 540px;">
+<div class="row g-0">
+  <div class="col-md-4">
+    <img src="${arrayData[8].album.cover}" class=" w-100 img-fluid rounded-start text-center " alt="...">
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title">${arrayData[8].title}</h5>
+      <p class="card-text">This is ${arrayData[8].artist.name}, one of the best metal band. And this is their cover of a song written by Sweetpea.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+</div>`;
     } else {
       console.log("ops, c'è stato un errore");
     }
