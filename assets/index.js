@@ -47,6 +47,6 @@ const fetchGenerale = async function (sito) {
   }
 };
 
-fetchGenerale(
+window.onload = fetchGenerale(
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
 );
