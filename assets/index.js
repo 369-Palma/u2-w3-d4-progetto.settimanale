@@ -15,6 +15,16 @@ const fetchGenerale = async function (sito) {
   }
 };
 
-fetchGenerale(
+let WhiskeyInTheJar = fetchGenerale(
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
 );
+for (let i = 0; i < 4; i++) {
+  firstRow.innerHTML =
+    firstRow.innerHTML +
+    `<div class="card" style="width: 18rem;">
+      <img src="data.md5_img" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">data.title</p>
+      </div>
+    </div>`;
+}
