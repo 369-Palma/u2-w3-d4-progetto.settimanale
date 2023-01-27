@@ -40,7 +40,7 @@ const fetchGenerale = async function (sito) {
 
       thirdRow.innerHTML =
         thirdRow.innerHTML +
-        `<div id="carouselExampleAutoplaying" class="carousel slide mx-auto" data-bs-ride="carousel">
+        `<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="${arrayData[6].album.cover}" class="  d-block col-4" alt="...">
@@ -52,13 +52,13 @@ const fetchGenerale = async function (sito) {
             <img src="${arrayData[19].album.cover}" class="d-block col-4" alt="...">
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <button class="carousel-control-prev  type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden ">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden ">Next</span>
         </button>
       </div>`;
     } else {
