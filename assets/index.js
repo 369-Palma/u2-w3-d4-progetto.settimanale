@@ -7,6 +7,20 @@ const fetchGenerale = async function (sito) {
     if (res.ok) {
       let data = await res.json();
       console.log(data);
+      let arrayData = data.data;
+      console.log(typeof arrayData);
+
+      for (let i = 0; i < 4; i++) {
+        firstRow.innerHTML =
+          firstRow.innerHTML +
+          `<div class="card d-flex mx-auto mb-2 col-6 col-lg-3 " >
+      <img src="${arrayData[i].album.cover}" class="card-img-top" alt="${arrayData[i].title}">
+      <div class="card-body">
+        <p class="card-text">${arrayData[i].title}</p>
+        
+      </div>
+    </div>`;
+      }
     } else {
       console.log("ops, c'è stato un errore");
     }
@@ -15,16 +29,6 @@ const fetchGenerale = async function (sito) {
   }
 };
 
-let WhiskeyInTheJar = fetchGenerale(
+fetchGenerale(
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
 );
-for (let i = 0; i < 4; i++) {
-  firstRow.innerHTML =
-    firstRow.innerHTML +
-    `<div class="card" style="width: 18rem;">
-      <img src="data.md5_img" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">data.title</p>
-      </div>
-    </div>`;
-}
