@@ -1,7 +1,6 @@
 const fetchBasic = async (link) => {
   const res = await fetch(link);
-  console.log(res);
-  if (res.ok) {
+  /* console.log(res) */ if (res.ok) {
     const { data: songs } = await res.json();
     return songs;
   } else {
@@ -34,8 +33,7 @@ const bestSong = async () => {
   let [myBestOne] = await fetchBasic(
     "https://striveschool-api.herokuapp.com/api/deezer/search?q=bestofyou"
   );
-  console.log(myBestOne);
-  const { album, title, artist, rank } = myBestOne;
+  /* console.log(myBestOne) */ const { album, title, artist, rank } = myBestOne;
   let secondRow = document.getElementById("secondaSezione");
   secondRow.innerHTML += `<div class="card mb-3" ">
 <div class="row g-0">
@@ -81,9 +79,83 @@ const carouselAlbum = async () => {
   }
 };
 
+//ALERT - BRANI POPOLARI
+
+const arrayDiTitoli = () => {
+  let h5 = document.querySelectorAll("h5");
+  let titoli = [];
+  h5.forEach((singoloTitolo) => {
+    titoli.push({
+      titolo: singoloTitolo.innerText,
+      rank: parseInt(singoloTitolo.getAttribute("songRank")),
+    });
+  });
+  return titoli;
+};
+
+const titoliAlfabetici = () => {
+  let titoli = arrayDiTitoli();
+  let sorted = titoli.map((canzone) => canzone.titolo).sort();
+  console.log(sorted);
+  let alert = document.querySelector(".modal ul.canzoniOrdinate");
+  alert.innerHTML = "";
+  sorted.forEach((canzone) => {
+    alert.innerHTML += `<li class='list-group-item'>
+      ${canzone}
+      
+      </li>`;
+  });
+};
+
+const soloTitolo = () => {
+  let titoli = arrayDiTitoli();
+  let sorted = titoli.sort((a, b) => {
+    return a.rank - b.rank;
+  });
+  console.log(sorted);
+  let alert = document.querySelector(".alert ul.canzoniOrdinate");
+  alert.innerHTML = "";
+  sorted.forEach((canzone) => {
+    alert.innerHTML += `<li class='list-group-item'>
+      ${canzone.titolo} - ${canzone.rank}  
+      
+      </li>`;
+  });
+  alert.parentElement.classList.toggle("d-none");
+};
+
+/* const titlesArray = () => {
+  const titles = [];
+  let titoliBrani = document.querySelectorAll("h5");
+  titoliBrani.forEach((brano) => {
+    titles.push({
+      title: brano.innerText,
+      rank: parseInt(brano.getAttribute("songRank")),
+    });
+  });
+  return titles;
+};
+
+const onlyTitle = () => {
+  let titoli = titlesArray();
+  let sorted = titoli.sort((a, b) => {
+    return a.rank - b.rank;
+  });
+  /* console.log(sorted) */
+/*  let alert = document.querySelector(".alert ul .ordinatedSongs");
+  alert.innerHTML = "";
+  sorted.forEach((song) => {
+    alert.innerHTML += `<li class='list-group-item'>
+    ${song.title} - ${song.rank} 
+    </li>`;
+  });
+  alert.parentElement.classList.toggle("d.none");
+}; */
+
 //RICHIAMO LE FUNZIONI
 window.onload = async () => {
   await bestSong();
   await myFavSongs();
   await carouselAlbum();
+  await titoliAlfabetici();
 };

@@ -13,7 +13,7 @@
     />
   </head>
   <body class="container">
-    <div id="alert"></div>
+    <div id="alert" class="d-none a"></div>
     <div id="modale"></div>
     <button class="btn d-none"></button>
     <!--INIZIO PRIMA SEZIONE -->
@@ -58,6 +58,84 @@
       </div>
     </div>
     <!--FINE TERZA SEZIONE -->
+    <!--BOTTONI-->
+    <!--inizio modal-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <ul class="list-group canzoniOrdinate"></ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="alert alert-success d-none" role="alert">
+    <h4 class="alert-heading">Titoli in ordine di rank:</h4>
+
+    <hr />
+    <ul class="list-group canzoniOrdinate"></ul>
+  </div>
+  <div class="container mt-5">
+      <div class="d-flex flex-row justify-content-around m-5">
+
+          <button class="btn btn-success" onclick="soloTitolo()">TUTTE LE CANZONI NELLA PAGINA</button>
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              CANZONI IN ORDINE ALFABETICO
+          </button>
+      </div>
+
+ <!--    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul class="list-group ordinatedSongs"></ul>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!--fine modal-->
+    <!-- <div class="alert alert-success d-none" role="alert">
+      <h4 class="alert-heading">Titoli in ordine di rank:</h4>
+      <hr />
+      <ul class="list-group ordinatedSongs"></ul>
+    </div>
+    <button id="alertButton" class="btn btn-success mb-4" onclick="onlyTitle()">
+      CANZONI IN ORDINE DI POPOLARITA'
+    </button> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
