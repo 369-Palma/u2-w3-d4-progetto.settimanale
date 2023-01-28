@@ -1,6 +1,7 @@
-let firstRow = document.getElementById("primaSezione");
+/* let firstRow = document.getElementById("primaSezione");
 let secondRow = document.getElementById("secondaSezione");
 let thirdRow = document.getElementById("terzaSezione");
+
 const fetchGenerale = async function (sito) {
   try {
     let res = await fetch(sito);
@@ -72,24 +73,74 @@ const fetchGenerale = async function (sito) {
 window.onload = fetchGenerale(
   "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
 );
+ */
 
 //TEST
+/* const databaseGeneral =
+  "https://striveschool-api.herokuapp.com/api/deezer/search?q="; */
 
-/* const fetchBasic = async function (sito) {
-  try {
-    let res = await fetch(sito);
-     console.log(res); 
-    if (res.ok) {
-      let data = await res.json();
-      console.log(data); 
-      let arrayData = data.data;
-      console.log(arrayData);
-      return arrayData;
-
-    } else {
-      console.log("ops, c'è stato un errore");
-    }
-  } catch (error) {
-    console.log("C'è stato un errore:", error);
+const fetchBasic = async (link) => {
+  const res = await fetch(link);
+  console.log(res);
+  if (res.ok) {
+    /*  let data = await res.json();
+    console.log(data);
+    let songs = data.data; */
+    const { data: songs } = await res.json();
+    return songs;
+  } else {
+    console.log("Ops, c'è stato un errore");
   }
-}; */
+};
+
+//PRIMA SEZIONE
+
+const myFavSongs = async () => {
+  let bestSongs = await fetchBasic(
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica"
+  );
+  let firstRow = document.querySelector("#primaSezione");
+  let favourite = [bestSongs[0], bestSongs[1], bestSongs[8], bestSongs[10]];
+  favourite.forEach(({ album, title, rank, artist }) => {
+    firstRow.innerHTML += `<div class="card d-flex mx-auto mb-2 col-6 col-lg-3 " >
+      <img src="${album.cover_xl}" class="card-img-top" alt="${title}">
+      <div class="card-body">
+      <h5 class="card-title" songRank='${rank}'>${title}</h5>
+        <p class="card-text text-center">${artist.name}</p>
+      </div>
+    </div>`;
+  });
+};
+
+//SECONDA SEZIONE
+
+const bestSong = async () => {
+  let [myBestOne] = await fetchBasic(
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=bestofyou"
+  );
+  console.log(myBestOne);
+  const { album, title, artist, rank } = myBestOne;
+  let secondRow = document.getElementById("secondaSezione");
+  secondRow.innerHTML += `<div class="card mb-3" ">
+<div class="row g-0">
+  <div class="col-md-4">
+    <img src="${album.cover_xl}" class=" w-100 img-fluid rounded-start text-center " alt="${title}">
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title" songRank='${rank}'>${title}</h5>
+      <p class="card-text">Those are the ${artist.name}, one of the best rock band.</p>
+    </div>
+  </div>
+</div>
+</div>`;
+};
+
+//TERZA SEZIONE
+
+//RICHIAMO LE FUNZIONI
+window.onload = async () => {
+  await bestSong();
+  /* await renderFavoriteAlbums()  */
+  await myFavSongs();
+};
