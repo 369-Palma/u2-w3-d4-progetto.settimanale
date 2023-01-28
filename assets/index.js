@@ -138,9 +138,46 @@ const bestSong = async () => {
 
 //TERZA SEZIONE
 
+const carouselAlbum = async () => {
+  try {
+    let myAlbum = [
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=jaggedlittlepill",
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=thedarksideofthemoon",
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=spaceoddity",
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=madeinheaven",
+    ];
+    /* console.log(myAlbum) */
+    /*  for (let i = 0; i < myAlbum.length; i++) {
+      const album = myAlbum[i];
+      let [brano] = await fetchBasic(album);
+      let thirdRow = document.querySelector(".carousel-inner");
+      thirdRow.innerHTML += `<div class="carousel-item d-flex justify-content-center ${
+        i == 0 ? "active" : ""
+      } ">
+      <img src="${brano.album.cover_xl}" class="d-block col-4" alt="${
+        brano.title
+      }">
+    </div> `;
+    } */
+    for (let i = 0; i < myAlbum.length; i++) {
+      const singolaQuery = myAlbum[i];
+      let [canzone] = await fetchBasic(singolaQuery);
+      const sezione = document.querySelector(".carousel-inner");
+      sezione.innerHTML += `<div class="carousel-item ${
+        i == 0 ? "active" : ""
+      }">
+    <img src="${canzone.album.cover_xl}" class="d-block w-100" alt="...">
+    
+  </div>`;
+    }
+  } catch (error) {
+    console.log("Ops c'e stato un errore del tipo:", error);
+  }
+};
+
 //RICHIAMO LE FUNZIONI
 window.onload = async () => {
   await bestSong();
-  /* await renderFavoriteAlbums()  */
   await myFavSongs();
+  await carouselAlbum();
 };
