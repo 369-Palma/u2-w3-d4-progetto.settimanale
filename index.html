@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-100 mx-0 my-0 px-0">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,71 +11,107 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
   </head>
-  <!--NAVBAR-->
-  <nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">My Music </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
+
+  <body class="text-bg-dark w-100 mx-0 px-0">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-dark bg-danger fixed-top w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Music </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end text-bg-dark"
+          tabindex="-1"
+          id="offcanvasDarkNavbar"
+          aria-labelledby="offcanvasDarkNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+              Dark offcanvas
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex mt-3" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-
-  <body class="container bg-secondary">
+    </nav>
     <div id="alert" class="d-none a"></div>
     <div id="modale"></div>
     <button class="btn d-none"></button>
+
     <!--INIZIO PRIMA SEZIONE -->
     <div class="row text-center my-4">
-      <h3>The best of Metallica</h3>
+      <h3>THE BEST OF METALLICA</h3>
     </div>
     <div class="row" id="primaSezione"></div>
     <!--FINE PRIMA SEZIONE -->
 
     <!--INIZIO SECONDA SEZIONE -->
     <div class="row text-center my-4">
-      <h3>The best of the best</h3>
+      <h3>THE VERY BEST SONG</h3>
     </div>
     <div class="row mx-auto" id="secondaSezione"></div>
     <!--FINE SECONDA SEZIONE -->
 
     <!--INIZIO TERZA SEZIONE -->
     <div class="row text-center my-4">
-      <h3>Big classics</h3>
+      <h3>BIG CLASSIC</h3>
     </div>
     <div class="row mx-auto mb-4">
       <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
@@ -101,41 +137,86 @@
       </div>
     </div>
     <!--FINE TERZA SEZIONE -->
-    <!--BOTTONI-->
-    <!--inizio modal-->
 
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--BOTTONI: modal e alert-->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
-              <ul class="list-group canzoniOrdinate"></ul>
+            <ul class="list-group canzoniOrdinate"></ul>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+              Close
+            </button>
             <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
     </div>
-  <div class="alert alert-success d-none fixed-top" role="alert">
-    <h4 class="alert-heading">Titoli in ordine di rank:</h4>
+    <div class="alert alert-success d-none fixed-top" role="alert">
+      <h4 class="alert-heading">Titoli in ordine di rank:</h4>
 
-    <hr />
-    <ul class="list-group fixed-top canzoniOrdinate"></ul>
-  </div>
-  <div class="container my-5">
-      <div class="d-flex flex-row justify-content-between m-5 ">
+      <hr />
+      <ul class="list-group fixed-top canzoniOrdinate"></ul>
+    </div>
 
-          <button class="btn btn-dark" onclick="titlesRank()">CANZONI IN ORDINE DI RANK</button>
-          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            TUTTE LE CANZONI NELLA PAGINA
-          </button>
+    <div class="d-flex flex-row justify-content-between m-5">
+      <button class="btn btn-dark border border-danger" onclick="titlesRank()">
+        CANZONI IN ORDINE DI RANK
+      </button>
+      <button
+        type="button"
+        class="btn btn-dark border border-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        TUTTE LE CANZONI NELLA PAGINA
+      </button>
+    </div>
+
+    <div class="row bg-danger w-100 px-0 mx-auto">
+      <div class="col">
+        <p>
+          Made with <br />
+          <i class="bi bi-balloon-heart"></i> <br />
+          by Palma
+        </p>
       </div>
-      
+      <div class="col">
+        <p>
+          Contact <br />
+          <a href="#" target="_blank"
+            ><i class="bi bi-telephone text-light"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="bi bi-whatsapp text-light"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="bi bi-messenger text-light"></i
+          ></a>
+          <a href="#" target="_blank"
+            ><i class="bi bi-envelope-at text-light"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

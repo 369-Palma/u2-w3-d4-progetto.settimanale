@@ -44,6 +44,7 @@ const bestSong = async () => {
     <div class="card-body">
       <h5 class="card-title" songRank='${rank}'>${title}</h5>
       <p class="card-text">Those are the ${artist.name}, one of the best rock band.</p>
+      <i class="bi bi-music-note-beamed"></i>
     </div>
   </div>
 </div>
