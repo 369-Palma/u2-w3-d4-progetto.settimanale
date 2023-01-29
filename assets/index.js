@@ -36,7 +36,7 @@ const bestSong = async () => {
   /* console.log(myBestOne) */ const { album, title, artist, rank } = myBestOne;
   let secondRow = document.getElementById("secondaSezione");
   secondRow.innerHTML += `<div class="card mb-3" ">
-<div class="row g-0">
+<div class="text-bg-seconday row g-0">
   <div class="col-md-4">
     <img src="${album.cover_xl}" class=" w-100 img-fluid rounded-start text-center " alt="${title}">
   </div>
