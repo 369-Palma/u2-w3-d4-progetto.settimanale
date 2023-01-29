@@ -125,46 +125,6 @@ const titlesRank = () => {
   alert.parentElement.classList.toggle("d-none");
 };
 
-/* const titlesArray = () => {
-  const titles = [];
-  let titoliBrani = document.querySelectorAll("h5");
-  titoliBrani.forEach((brano) => {
-    titles.push({
-      title: brano.innerText,
-      rank: parseInt(brano.getAttribute("songRank")),
-    });
-  });
-  return titles;
-};
- 
-const titlesModal = () => {
-  let titoli = titlesArray();
-  let sorted = titoli.map((canzone) => canzone.titolo).sort();
-  console.log(sorted) 
-  let alert = document.querySelector(".modal ul.ordinatedSongs1");
-  sorted.innerHTML = "";
-  sorted.forEach((brano) => {
-    alert.innerHTML += `<li class='list-group-item'>
-  ${brano} </li> `;
-  });
-};
-
-const onlyTitle = () => {
-  let titoli = titlesArray();
-  let sorted = titoli.sort((a, b) => {
-    return a.rank - b.rank;
-  });
-  console.log(sorted);
-  let alert = document.querySelector(".alert ul.ordinatedSongs");
-  alert.innerHTML = "";
-  sorted.forEach((song) => {
-    alert.innerHTML += `<li class='list-group-item'>
-    ${song.title} - ${song.rank} 
-    </li>`;
-  });
-  alert.parentElement.classList.toggle("d.none");
-}; */
-
 //RICHIAMO LE FUNZIONI
 window.onload = async () => {
   await bestSong();
