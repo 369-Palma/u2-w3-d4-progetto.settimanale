@@ -81,7 +81,7 @@ const carouselAlbum = async () => {
 
 //ALERT - BRANI POPOLARI
 
-const arrayDiTitoli = () => {
+const titlesArray = () => {
   let h5 = document.querySelectorAll("h5");
   let titoli = [];
   h5.forEach((singoloTitolo) => {
@@ -93,31 +93,31 @@ const arrayDiTitoli = () => {
   return titoli;
 };
 
-const titoliAlfabetici = () => {
-  let titoli = arrayDiTitoli();
-  let sorted = titoli.map((canzone) => canzone.titolo).sort();
+const titlesModal = () => {
+  let titoli = titlesArray();
+  let sorted = titoli.map((song) => song.titolo);
   console.log(sorted);
   let alert = document.querySelector(".modal ul.canzoniOrdinate");
   alert.innerHTML = "";
-  sorted.forEach((canzone) => {
+  sorted.forEach((song) => {
     alert.innerHTML += `<li class='list-group-item'>
-      ${canzone}
+      ${song}
       
       </li>`;
   });
 };
 
-const soloTitolo = () => {
-  let titoli = arrayDiTitoli();
+const titlesRank = () => {
+  let titoli = titlesArray();
   let sorted = titoli.sort((a, b) => {
     return a.rank - b.rank;
   });
   console.log(sorted);
   let alert = document.querySelector(".alert ul.canzoniOrdinate");
   alert.innerHTML = "";
-  sorted.forEach((canzone) => {
+  sorted.forEach((brano) => {
     alert.innerHTML += `<li class='list-group-item'>
-      ${canzone.titolo} - ${canzone.rank}  
+      ${brano.titolo} - ${brano.rank}  
       
       </li>`;
   });
@@ -135,14 +135,26 @@ const soloTitolo = () => {
   });
   return titles;
 };
+ 
+const titlesModal = () => {
+  let titoli = titlesArray();
+  let sorted = titoli.map((canzone) => canzone.titolo).sort();
+  console.log(sorted) 
+  let alert = document.querySelector(".modal ul.ordinatedSongs1");
+  sorted.innerHTML = "";
+  sorted.forEach((brano) => {
+    alert.innerHTML += `<li class='list-group-item'>
+  ${brano} </li> `;
+  });
+};
 
 const onlyTitle = () => {
   let titoli = titlesArray();
   let sorted = titoli.sort((a, b) => {
     return a.rank - b.rank;
   });
-  /* console.log(sorted) */
-/*  let alert = document.querySelector(".alert ul .ordinatedSongs");
+  console.log(sorted);
+  let alert = document.querySelector(".alert ul.ordinatedSongs");
   alert.innerHTML = "";
   sorted.forEach((song) => {
     alert.innerHTML += `<li class='list-group-item'>
@@ -157,5 +169,5 @@ window.onload = async () => {
   await bestSong();
   await myFavSongs();
   await carouselAlbum();
-  await titoliAlfabetici();
+  await titlesModal();
 };

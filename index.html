@@ -61,7 +61,7 @@
     <!--BOTTONI-->
     <!--inizio modal-->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -84,16 +84,16 @@
     <hr />
     <ul class="list-group fixed-top canzoniOrdinate"></ul>
   </div>
-  <div class="container mt-5">
-      <div class="d-flex flex-row justify-content-around m-5">
+  <div class="container my-5">
+      <div class="d-flex justify-content-evenly me-md-3 ">
 
-          <button class="btn btn-success" onclick="soloTitolo()">TUTTE LE CANZONI NELLA PAGINA</button>
+          <button class="btn btn-success" onclick="titlesRank()">CANZONI IN ORDINE DI RANK</button>
           <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              CANZONI IN ORDINE ALFABETICO
+            TUTTE LE CANZONI NELLA PAGINA
           </button>
       </div>
 
- <!--    <div
+    <!-- <div
       class="modal fade"
       id="exampleModal"
       tabindex="-1"
@@ -112,7 +112,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <ul class="list-group ordinatedSongs"></ul>
+            <ul class="list-group ordinatedSongs1"></ul>
           </div>
           <div class="modal-footer">
             <button
@@ -128,14 +128,26 @@
       </div>
     </div> -->
     <!--fine modal-->
-    <!-- <div class="alert alert-success d-none" role="alert">
+   <!--  <div class="alert alert-success d-none" role="alert">
       <h4 class="alert-heading">Titoli in ordine di rank:</h4>
       <hr />
-      <ul class="list-group ordinatedSongs"></ul>
+      <ul class="list-group ordinatedSongs" id="ordinatedSongs"></ul>
     </div>
-    <button id="alertButton" class="btn btn-success mb-4" onclick="onlyTitle()">
-      CANZONI IN ORDINE DI POPOLARITA'
-    </button> -->
+    <div class="container mt-5">
+      <div class="d-flex flex-row justify-content-around m-5">
+        <button class="btn btn-primary" onclick="onlyTitle()">
+          CANZONI IN ORDINE DI POPOLARITA'
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          CANZONI IN ORDINE ALFABETICO
+        </button>
+      </div>
+    </div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
